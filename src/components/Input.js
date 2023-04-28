@@ -12,22 +12,43 @@ class Input extends Component {
         <form className="personalForm">
           <h2>Personal Information</h2>
           <label htmlFor="name">Name</label>
-          <input type="text" name="name" id="name" />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            onChange={this.props.handleChange}
+          />
           <label htmlFor="address">Address</label>
-          <input type="text" name="address" id="address" />
+          <input
+            type="text"
+            name="address"
+            id="address"
+            onChange={this.props.handleChange}
+          />
           <label htmlFor="mobile">Mobile Number</label>
-          <input type="tel" name="mobile" id="mobile" />
+          <input
+            type="tel"
+            name="mobile"
+            id="mobile"
+            onChange={this.props.handleChange}
+          />
           <label htmlFor="email">Email</label>
-          <input type="email" name="email" id="email" />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            onChange={this.props.handleChange}
+          />
           <label htmlFor="description">Description</label>
           <textarea
             name="description"
             id="description"
             cols="30"
             rows="10"
+            onChange={this.props.handleChange}
           ></textarea>
-          <button>Submit</button>
         </form>
+
         <form className="experienceForm">
           <h2>Work Experience</h2>
           <label htmlFor="position">Position</label>
@@ -47,6 +68,7 @@ class Input extends Component {
           ></textarea>
           <button>Submit</button>
         </form>
+
         <form className="educationForm">
           <h2>Education</h2>
           <label htmlFor="qualification">Qualification</label>

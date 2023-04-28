@@ -49,13 +49,23 @@ class App extends Component {
         },
       ],
     };
+
+    this.handlePersonalInfo = this.handlePersonalInfo.bind(this);
+  }
+
+  handlePersonalInfo(e) {
+    e.preventDefault();
+
+    const { name, value } = e.target;
+
+    this.setState({ [name]: value });
   }
 
   render() {
     return (
       <div className="appContainer">
         <section>
-          <Input />
+          <Input handleChange={this.handlePersonalInfo} />
         </section>
         <section>
           <div className="cvDisplayContainer">
