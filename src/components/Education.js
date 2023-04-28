@@ -11,6 +11,7 @@ class Education extends Component {
 
     return (
       <div>
+        {/* use map to iterate through education array and display it on cv */}
         {education.map((edu) => {
           return (
             <div className="edu">

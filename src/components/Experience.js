@@ -11,6 +11,7 @@ class Experience extends Component {
 
     return (
       <div>
+        {/* use map to iterate through experience array and display on cv */}
         {experience.map((job) => {
           return (
             <div className="job">

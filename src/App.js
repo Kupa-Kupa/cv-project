@@ -10,6 +10,7 @@ class App extends Component {
     super(props);
 
     this.state = {
+      // set state of personal info with dummy data
       name: 'John Doe',
       address: '123 Address St, Suburb, 1234 State',
       mobile: '0400000000',
@@ -17,12 +18,15 @@ class App extends Component {
       description:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis ipsam porro quam architecto atque ratione fugiat vero nobis, ab repudiandae.',
 
+      // set state of job input fields
       position: '',
       company: '',
       expFrom: '',
       expTo: '',
       tasks: '',
 
+      // set state of past work experience to display on cv
+      // state is updated on submission of experience form
       experience: [
         {
           position: 'Analyst',
@@ -40,12 +44,15 @@ class App extends Component {
         },
       ],
 
+      // set state of education input fields
       qualification: '',
       institute: '',
       eduFrom: '',
       eduTo: '',
       eduInfo: '',
 
+      // set state of past education to display on cv
+      // state is updated on submission of education form
       education: [
         {
           qualification: 'Degree',
@@ -64,6 +71,7 @@ class App extends Component {
       ],
     };
 
+    // bind methods to this
     this.handlePersonalInfo = this.handlePersonalInfo.bind(this);
 
     this.handleExperienceInfo = this.handleExperienceInfo.bind(this);
@@ -75,21 +83,21 @@ class App extends Component {
     this.handleEducationSubmit = this.handleEducationSubmit.bind(this);
   }
 
+  // update state when input for personal info is changed
   handlePersonalInfo(e) {
     const { name, value } = e.target;
 
     this.setState({ [name]: value });
   }
 
+  // update state when input for work experience is changed
   handleExperienceInfo(e) {
     const { name, value } = e.target;
-
-    console.log(name);
-    console.log(value);
 
     this.setState({ [name]: value });
   }
 
+  // update the state of past work experience to display on cv
   handleExperienceSubmit(e) {
     e.preventDefault();
 
@@ -105,12 +113,14 @@ class App extends Component {
     });
   }
 
+  // update state when input for education is changed
   handleEducationInfo(e) {
     const { name, value } = e.target;
 
     this.setState({ [name]: value });
   }
 
+  // update state of education array to display on cv
   handleEducationSubmit(e) {
     e.preventDefault();
 
