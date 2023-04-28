@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Kupa-Kupa/cv-project/static/css/main.05734724.css",
-    "main.js": "/Kupa-Kupa/cv-project/static/js/main.fd305bce.js",
-    "index.html": "/Kupa-Kupa/cv-project/index.html",
-    "main.05734724.css.map": "/Kupa-Kupa/cv-project/static/css/main.05734724.css.map",
-    "main.fd305bce.js.map": "/Kupa-Kupa/cv-project/static/js/main.fd305bce.js.map"
+    "main.css": "/cv-project/static/css/main.05734724.css",
+    "main.js": "/cv-project/static/js/main.fd305bce.js",
+    "index.html": "/cv-project/index.html",
+    "main.05734724.css.map": "/cv-project/static/css/main.05734724.css.map",
+    "main.fd305bce.js.map": "/cv-project/static/js/main.fd305bce.js.map"
   },
   "entrypoints": [
     "static/css/main.05734724.css",
