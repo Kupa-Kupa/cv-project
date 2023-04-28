@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/Experience.css';
 
 class Experience extends Component {
   constructor(props) {
@@ -6,7 +7,24 @@ class Experience extends Component {
   }
 
   render() {
-    return <div>Experience</div>;
+    const { experience } = this.props;
+
+    return (
+      <div>
+        {experience.map((job) => {
+          return (
+            <div className="job">
+              <div> {job.position} </div>
+              <div> {job.company} </div>
+              <div>
+                {job.expFrom} - {job.expTo}
+              </div>
+              <div> {job.experience} </div>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 }
 
