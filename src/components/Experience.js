@@ -19,7 +19,7 @@ class Experience extends Component {
               <div>
                 {job.expFrom} - {job.expTo}
               </div>
-              <div> {job.experience} </div>
+              <div> {job.tasks} </div>
             </div>
           );
         })}

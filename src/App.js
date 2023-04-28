@@ -16,6 +16,36 @@ class App extends Component {
       email: 'example@email.com',
       description:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis ipsam porro quam architecto atque ratione fugiat vero nobis, ab repudiandae.',
+
+      position: '',
+      company: '',
+      expFrom: '',
+      expTo: '',
+      tasks: '',
+
+      experience: [
+        {
+          position: 'Analyst',
+          company: 'Bank',
+          expFrom: '01/01/2000',
+          expTo: '01/01/3000',
+          tasks: 'notable experience',
+        },
+        {
+          position: 'Bro',
+          company: 'Gym',
+          expFrom: '01/01/2000',
+          expTo: '01/01/3000',
+          tasks: 'notable experience',
+        },
+      ],
+
+      qualification: '',
+      institute: '',
+      eduFrom: '',
+      eduTo: '',
+      eduInfo: '',
+
       education: [
         {
           qualification: 'Degree',
@@ -32,40 +62,81 @@ class App extends Component {
           eduInfo: 'additional info',
         },
       ],
-      experience: [
-        {
-          position: 'Analyst',
-          company: 'Bank',
-          expFrom: '01/01/2000',
-          expTo: '01/01/3000',
-          experience: 'notable experience',
-        },
-        {
-          position: 'Bro',
-          company: 'Gym',
-          expFrom: '01/01/2000',
-          expTo: '01/01/3000',
-          experience: 'notable experience',
-        },
-      ],
     };
 
     this.handlePersonalInfo = this.handlePersonalInfo.bind(this);
+
+    this.handleExperienceInfo = this.handleExperienceInfo.bind(this);
+
+    this.handleExperienceSubmit = this.handleExperienceSubmit.bind(this);
+
+    this.handleEducationInfo = this.handleEducationInfo.bind(this);
+
+    this.handleEducationSubmit = this.handleEducationSubmit.bind(this);
   }
 
   handlePersonalInfo(e) {
-    e.preventDefault();
-
     const { name, value } = e.target;
 
     this.setState({ [name]: value });
+  }
+
+  handleExperienceInfo(e) {
+    const { name, value } = e.target;
+
+    console.log(name);
+    console.log(value);
+
+    this.setState({ [name]: value });
+  }
+
+  handleExperienceSubmit(e) {
+    e.preventDefault();
+
+    const { position, company, expFrom, expTo, tasks } = this.state;
+
+    this.setState((prevState) => {
+      return {
+        experience: [
+          ...prevState.experience,
+          { position, company, expFrom, expTo, tasks },
+        ],
+      };
+    });
+  }
+
+  handleEducationInfo(e) {
+    const { name, value } = e.target;
+
+    this.setState({ [name]: value });
+  }
+
+  handleEducationSubmit(e) {
+    e.preventDefault();
+
+    const { qualification, institute, eduFrom, eduTo, eduInfo } = this.state;
+
+    this.setState((prevState) => {
+      return {
+        education: [
+          ...prevState.education,
+          { qualification, institute, eduFrom, eduTo, eduInfo },
+        ],
+      };
+    });
   }
 
   render() {
     return (
       <div className="appContainer">
         <section>
-          <Input handleChange={this.handlePersonalInfo} />
+          <Input
+            handlePersonalChange={this.handlePersonalInfo}
+            handleExperienceChange={this.handleExperienceInfo}
+            handleEducationChange={this.handleEducationInfo}
+            handleExperienceSubmit={this.handleExperienceSubmit}
+            handleEducationSubmit={this.handleEducationSubmit}
+          />
         </section>
         <section>
           <div className="cvDisplayContainer">
