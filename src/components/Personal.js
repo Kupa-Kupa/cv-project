@@ -1,22 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../styles/Personal.css';
 
-class Personal extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>{this.props.name}</h1>
-        <div>{this.props.address}</div>
-        <div>{this.props.mobile}</div>
-        <div>{this.props.email}</div>
-        <div>{this.props.description}</div>
-      </div>
-    );
-  }
-}
+const Personal = (props) => {
+  return (
+    <div>
+      <h1>{props.personalInfo.name}</h1>
+      <div>{props.personalInfo.address}</div>
+      <div>{props.personalInfo.mobile}</div>
+      <div>{props.personalInfo.email}</div>
+      <div>{props.personalInfo.description}</div>
+    </div>
+  );
+};
 
 export default Personal;
